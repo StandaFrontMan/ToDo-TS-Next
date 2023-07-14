@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-interface ITodo { // тип элемента массива
+export interface ITodo { // тип элемента массива
     id: string;
     text: string;
     complited: boolean;
