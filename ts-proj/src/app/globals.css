@@ -1,14 +1,9 @@
-input:checked + span {
-  text-decoration: line-through;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Стили для компонента Home */
 .Home {
   display: flex;
   flex-direction: column;
@@ -25,18 +20,19 @@ body {
   padding: 10px;
   margin-right: 10px;
   font-size: 16px;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .adding-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-/* Стили для компонента TodoList */
 .output-area {
   display: flex;
   flex-direction: column;
@@ -48,10 +44,11 @@ body {
 }
 
 .filter-button {
+  border: none;
   padding: 8px 16px;
   font-size: 14px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
+  background-color: var(--background-color);
+  color: var(--text-color);
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
@@ -61,7 +58,6 @@ body {
   width: 300px;
 }
 
-/* Стили для компонента TodoItem */
 .todo-info {
   display: flex;
   align-items: center;
@@ -80,8 +76,53 @@ body {
   padding: 8px 16px;
   font-size: 14px;
   background-color: #dc3545;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.theme-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Светлая тема */
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light button {
+  background-color: #007bff; 
+  color: #ffffff;
+}
+
+/* Темная тема */
+.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark button {
+  background-color: #6c757d; 
+  color: #ffffff;
+}
+
+.dark .main-input {
+  background-color: #fff;
 }

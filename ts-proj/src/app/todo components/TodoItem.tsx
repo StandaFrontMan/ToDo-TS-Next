@@ -2,22 +2,28 @@ import React from 'react'
 import { ITodo, markAsDone, removeTode } from '@/redux/features/todo.Slice'
 import { useAppDispatch } from '@/redux/hooks'
 
-const TodoItem: React.FC<ITodo> = ({ id, text, complited }) => {
+interface TodoItemProps extends ITodo {
+  className: 'light' | 'dark';
+}
+
+const TodoItem: React.FC<TodoItemProps> = ({ id, text, complited, className }) => {
 
     const dispatch = useAppDispatch()
 
   return (
-    <li className='todo-info'>
+    <li className={`todo-info ${className}`}>
         <input
             className='checkbox-condition'
             type='checkbox'
             checked={complited}
             onChange={() => dispatch(markAsDone(id))}
         />
-        <span className='todo-text'>{text}</span>
-        <button className='delete-button' onClick={() => dispatch(removeTode(id))}>Delite</button>
+        <span style={{ textDecoration: complited ? 'line-through' : 'none' }} className='todo-text'>{text}</span> 
+        <button className='delete-button' onClick={() => dispatch(removeTode(id))}>Delete</button>
     </li>
   )
 }
 
 export default TodoItem
+
+// текст в спане зачеркивает тернальный оператор 
