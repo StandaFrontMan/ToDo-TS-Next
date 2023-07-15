@@ -12,7 +12,7 @@ const InputField: React.FC<InputFieldProps> = ({ value, updateText }) => {
 
     const dispatch = useAppDispatch()
 
-    const handleAddTodo = () => {
+    const handleAddTodo = () => { // проверка на пустой инпут
       if (value.trim() !== '') {
         dispatch(addTodo(value));
         updateText('');
@@ -20,13 +20,17 @@ const InputField: React.FC<InputFieldProps> = ({ value, updateText }) => {
     };
 
   return (
-    <div>
+    <div className='input-area'>
         <input
+            className='main-input'
             placeholder='Type...'
             value={value}
             onChange={(e) => updateText(e.target.value)}
         />
-        <button onClick={handleAddTodo}>Add Too</button>
+        <button
+          className='adding-button'
+          onClick={handleAddTodo}
+        >Add ToDo</button>
     </div>
   )
 }

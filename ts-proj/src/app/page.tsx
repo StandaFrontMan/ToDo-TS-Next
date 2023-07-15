@@ -10,9 +10,6 @@ export default function Home() {
 
   const [text, setText] = useState<string>('');
 
-
-  
-
   return (
     <div className='Home'>
       <InputField

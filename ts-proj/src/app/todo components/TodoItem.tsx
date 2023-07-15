@@ -7,14 +7,15 @@ const TodoItem: React.FC<ITodo> = ({ id, text, complited }) => {
     const dispatch = useAppDispatch()
 
   return (
-    <li>
+    <li className='todo-info'>
         <input
+            className='checkbox-condition'
             type='checkbox'
             checked={complited}
             onChange={() => dispatch(markAsDone(id))}
         />
-        <span>{text}</span>
-        <button onClick={() => dispatch(removeTode(id))}>Delite</button>
+        <span className='todo-text'>{text}</span>
+        <button className='delete-button' onClick={() => dispatch(removeTode(id))}>Delite</button>
     </li>
   )
 }
