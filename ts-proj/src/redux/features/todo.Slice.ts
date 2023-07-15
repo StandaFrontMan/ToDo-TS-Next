@@ -24,6 +24,9 @@ export const todoSlice = createSlice({
                 text: action.payload,
                 complited: false
             })
+
+            console.log(state.todos);
+            
         },
         removeTode: (state, action: PayloadAction<string>) => { // удаляем элемент из массива todoos 
             state.todos = state.todos.filter(todo => todo.id !== action.payload);

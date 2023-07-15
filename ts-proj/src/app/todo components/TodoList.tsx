@@ -6,6 +6,9 @@ const TodoList: React.FC = () => {
 
     const { todos } = useAppSelector(state => state.todo)
 
+
+    console.log(todos);
+    
   return (
     <ul>
         {
